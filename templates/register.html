@@ -12,13 +12,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"
     />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
   </head>
 
   <body>
     <div class="login-dark">
       <form action="/perform_registration" method="post">
-        <h2 class="sr-only">Register</h2>
+        {% if register_failed %}
+        <h6 class="text-center text-danger">Email already exist!</h6>
+        {% endif %}
+        <br />
+        <h2 class="text-center">Register</h2>
         <div class="illustration">
           <i class="icon ion-ios-locked-outline"></i>
         </div>
@@ -60,7 +67,6 @@
         </div>
 
         <a href="/" class="forgot">Alredy Registered? Login</a>
-
       </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

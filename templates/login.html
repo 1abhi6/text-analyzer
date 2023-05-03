@@ -12,13 +12,27 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"
     />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
   </head>
 
   <body>
     <div class="login-dark">
-      <form action='/perform_login' method="post">
-        <h2 class="sr-only">Login Form</h2>
+      <form action="/perform_login" method="post">
+        {% if register_success %}
+        <h6 class="text-center text-success">
+          Registration Successful! Login now
+        </h6>
+        {% endif %}
+        {% if login_failed %}
+        <h6 class="text-center text-danger">
+          Invalid Email/Password!
+        </h6>
+        {% endif %}
+        <br />
+        <h2 class="text-center">Login</h2>
         <div class="illustration">
           <i class="icon ion-ios-locked-outline"></i>
         </div>
