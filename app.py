@@ -1,9 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from database import Database
-
+import api
 
 app = Flask(__name__)
 db = Database()
+api = api.API()
 
 
 @app.route('/')
@@ -37,8 +38,25 @@ def perform_login():
     response = db.fetch(email, password)
 
     if response:
-        return 'Beta tu login hogya'
+        return redirect('/profile')
     return render_template('login.html', login_failed=True)
+
+
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+
+@app.route('/ner')
+def ner():
+    return render_template('ner.html')
+
+
+@app.route('/perform_ner', methods=['POST'])
+def perform_ner():
+    text = request.form.get('text')
+    response = api.sentiment_analysis(text)
+    return render_template('ner.html', response=response,text=text)
 
 
 app.run(debug=True)
