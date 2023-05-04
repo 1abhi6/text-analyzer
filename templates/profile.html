@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
-    <style>
-        ul>li>a,p {
-          color: white;
-        }
-      </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{name}}'s Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
   </head>
   <body>
-    <ul>
-        <p>Bhai bhot kuch kruga mai yaha pr</p>
-      <li><a href="/ner" >Name Entity Relationship</a></li>
-      <li><a href="#" >Abuse Detection</a></li>
-      <li><a href="#" >Sentiment Analysis</a></li>
-      <li><a href="#" >Kuch to hoga</a></li>
-      <li><a href="#" >Yahah bhi kuch hoga</a></li>
-    </ul>
+    <div class="container">
+      <h1 class="display-4 mt-5">Welcome {{name}} to NLP App!</h1>
+      <p class="lead">Explore our exciting features:</p>
+      <ul class="list-group mb-5">
+        <li class="list-group-item"><a href = "/sentiment_analysis">Sentiment Analysis</a></li>
+        <li class="list-group-item"><a href = "/abuse-detection">Abuse Detection</a></li>
+        <li class="list-group-item"><a href = "/ner">Name Entity Recognisation</a></li>
+        <li class="list-group-item"><a href = "/emotion-detection">Emotion Preditction</a></li>
+        <li class="list-group-item"><a href = "/keyword-detection">Keyword Detection</a></li>
+      </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </body>
 </html>

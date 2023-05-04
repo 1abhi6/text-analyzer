@@ -1,0 +1,30 @@
+.container {
+    margin-top: 50px;
+}
+
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    color: #007bff;
+}
+
+.navbar-nav .nav-link {
+    color: #555;
+    font-size: 18px;
+}
+
+.display-4 {
+    color: #007bff;
+}
+
+.lead {
+    color: #555;
+}
+
+.heading {
+    color: #0a0a0a;
+}

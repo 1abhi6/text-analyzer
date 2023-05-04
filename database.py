@@ -19,5 +19,5 @@ class Database:
         with open('users.json', 'r', encoding='utf8') as read_file:
             users = json.load(read_file)
             if email in users and users[email][1] == password:
-                return True
+                return (True,users[email][0])
             return False

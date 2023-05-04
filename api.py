@@ -20,3 +20,7 @@ class API:
     def abuse_detection(self, text):
         response = pd.abuse(text)
         return response
+    
+    def keyword_detection(self, text):
+        response = pd.keywords(text)
+        return response
