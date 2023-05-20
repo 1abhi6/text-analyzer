@@ -1,9 +1,9 @@
 import paralleldots as pd
-
+from config import API_KEY
 
 class API:
     def __init__(self):
-        pd.set_api_key('8oMtxkKLmwc703UmLQ0KDDTgvg1qIX6i45JmZnAQdr0')
+        pd.set_api_key(API_KEY)
 
     def sentiment_analysis(self, text):
         response = pd.sentiment(text)
